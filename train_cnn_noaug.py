@@ -91,11 +91,7 @@ LR             = 0.001
 best_epochs_no_improve = 0
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# PHẦN 1: CHUẨN BỊ DATASET
-# ═══════════════════════════════════════════════════════════════════════════════
+# PHẦN 1: DATASET
 
 def create_dataset_structure():
     """Tạo cấu trúc thư mục dataset nếu chưa có."""
@@ -169,9 +165,8 @@ def auto_split(source_dir, val_ratio=0.15, test_ratio=0.15):
         if torch.cuda.is_available()
         else "CPU"
     )
-# ═══════════════════════════════════════════════════════════════════════════════
 # PHẦN 2: TRAIN CNN
-# ═══════════════════════════════════════════════════════════════════════════════
+
 def build_model(num_classes):
 
     if MODEL_NAME == "mobilenet":
@@ -244,27 +239,6 @@ def get_transforms():
     ])
 
     return train_tf, val_tf
-
-
-'''
-def build_model(n_classes: int = 3):
-
-    import torch
-    import torchvision.models as models
-
-    model = build_model(
-        len(CLASSES)
-    )
-
-    in_features = model.classifier[1].in_features
-
-    model.classifier[1] = torch.nn.Linear(
-        in_features,
-        n_classes
-    )
-
-    return model
-'''
 
 def train():
     """Train CNN với transfer learning từ MobileNetV2."""
@@ -467,10 +441,7 @@ def train():
         json.dump({"history": history, "best_val_acc": best_val_acc,
                    "classes": CLASSES}, f, indent=2)
 
-
-# ══════════════════════════════════════════════════════════════════════════════
 # PHẦN 3: VALIDATE & TEST
-# ═══════════════════════════════════════════════════════════════════════════════
 
 def validate():
     """Đánh giá chi tiết từng class trên tập val."""
@@ -720,24 +691,6 @@ def test_image(image_path: str):
     print(f"\n💧 Điều chỉnh volume tưới: {adj:+.0f}%")
 
     print(f"{'='*55}")
-'''
-    # Lưu JSON kết quả
-    result_path = os.path.splitext(image_path)[0] + "_cnn_result.json"
-    with open(result_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "image": image_path,
-            "n_leaves": n,
-            "summary": {
-                "healthy_pct": healthy_pct,
-                "dry_pct": dry_pct,
-                "wet_pct": wet_pct,
-                "volume_adjustment_pct": adj,
-            },
-            "leaves": results_list,
-            "analyzed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        }, f, indent=2, ensure_ascii=False)
-    logger.info(f"✅ Kết quả lưu: {result_path}")
-'''
 
 def crop_only(image_path: str):
     """Chỉ chạy YOLO crop lá, lưu ảnh crop ra thư mục."""
@@ -782,10 +735,8 @@ def crop_only(image_path: str):
     logger.info(f"✅ Crop xong: {n} lá → {out_dir}/")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# MAIN
-# ═══════════════════════════════════════════════════════════════════════════════
 
+# MAIN
 if __name__ == "__main__":
 
     if len(sys.argv) == 1:
@@ -826,21 +777,5 @@ if __name__ == "__main__":
 
     else:
         print("""
-Cách dùng:
-  python train_cnn.py                      # train CNN
-  python train_cnn.py check                # kiểm tra dataset
-  python train_cnn.py validate             # đánh giá sau train
-  python train_cnn.py test <ảnh.jpg>       # test 1 ảnh (YOLO + CNN)
-  python train_cnn.py crop <ảnh.jpg>       # chỉ crop lá bằng YOLO
-  python train_cnn.py split <thư_mục>      # tự chia train/val
-
-Cấu trúc dataset:
-  dataset_cnn/train/dry/            ← ảnh lá khô (train)
-  dataset_cnn/train/wet/            ← ảnh lá ướt (train)
-  dataset_cnn/train/healthy/        ← ảnh lá bình thường (train)
-  dataset_cnn/val/<class>/          ← ảnh val (20-30%)
-
-Ảnh test để ở đâu cũng được, truyền đường dẫn vào:
-  python train_cnn.py test D:/anh_test/cay_ot.jpg
-  python train_cnn.py test data/images/leaf_20260601.jpg
+        LỖI
         """)
