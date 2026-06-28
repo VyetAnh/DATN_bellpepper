@@ -1,0 +1,66 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_acc": 79.65,
+      "val_acc": 87.87,
+      "train_loss": 56.201,
+      "val_loss": 7.8593
+    },
+    {
+      "epoch": 2,
+      "train_acc": 84.75,
+      "val_acc": 88.27,
+      "train_loss": 43.5818,
+      "val_loss": 8.3982
+    },
+    {
+      "epoch": 3,
+      "train_acc": 88.27,
+      "val_acc": 92.45,
+      "train_loss": 33.3115,
+      "val_loss": 4.5526
+    },
+    {
+      "epoch": 4,
+      "train_acc": 89.85,
+      "val_acc": 91.11,
+      "train_loss": 29.3252,
+      "val_loss": 6.4891
+    },
+    {
+      "epoch": 5,
+      "train_acc": 88.96,
+      "val_acc": 84.5,
+      "train_loss": 30.3225,
+      "val_loss": 11.2769
+    },
+    {
+      "epoch": 6,
+      "train_acc": 90.11,
+      "val_acc": 90.3,
+      "train_loss": 26.6957,
+      "val_loss": 8.1619
+    },
+    {
+      "epoch": 7,
+      "train_acc": 89.91,
+      "val_acc": 91.78,
+      "train_loss": 28.4917,
+      "val_loss": 4.4713
+    },
+    {
+      "epoch": 8,
+      "train_acc": 91.52,
+      "val_acc": 92.32,
+      "train_loss": 23.3701,
+      "val_loss": 4.7769
+    }
+  ],
+  "best_val_acc": 92.45283018867924,
+  "classes": [
+    "dry",
+    "healthy",
+    "wet"
+  ]
+}

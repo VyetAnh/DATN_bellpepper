@@ -1,0 +1,108 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_acc": 79.78,
+      "val_acc": 92.71,
+      "train_loss": 28.0843,
+      "val_loss": 3.3493
+    },
+    {
+      "epoch": 2,
+      "train_acc": 91.38,
+      "val_acc": 94.22,
+      "train_loss": 13.5658,
+      "val_loss": 2.3113
+    },
+    {
+      "epoch": 3,
+      "train_acc": 93.45,
+      "val_acc": 94.53,
+      "train_loss": 10.8502,
+      "val_loss": 1.8715
+    },
+    {
+      "epoch": 4,
+      "train_acc": 93.45,
+      "val_acc": 94.83,
+      "train_loss": 10.5048,
+      "val_loss": 1.7577
+    },
+    {
+      "epoch": 5,
+      "train_acc": 93.97,
+      "val_acc": 95.44,
+      "train_loss": 8.8396,
+      "val_loss": 1.5359
+    },
+    {
+      "epoch": 6,
+      "train_acc": 94.82,
+      "val_acc": 94.83,
+      "train_loss": 8.0868,
+      "val_loss": 1.3687
+    },
+    {
+      "epoch": 7,
+      "train_acc": 95.4,
+      "val_acc": 95.44,
+      "train_loss": 7.6599,
+      "val_loss": 1.3384
+    },
+    {
+      "epoch": 8,
+      "train_acc": 95.33,
+      "val_acc": 95.44,
+      "train_loss": 6.6512,
+      "val_loss": 1.2905
+    },
+    {
+      "epoch": 9,
+      "train_acc": 95.14,
+      "val_acc": 96.05,
+      "train_loss": 6.9069,
+      "val_loss": 1.2693
+    },
+    {
+      "epoch": 10,
+      "train_acc": 96.05,
+      "val_acc": 95.14,
+      "train_loss": 6.5192,
+      "val_loss": 1.2321
+    },
+    {
+      "epoch": 11,
+      "train_acc": 95.27,
+      "val_acc": 95.44,
+      "train_loss": 6.4981,
+      "val_loss": 1.1887
+    },
+    {
+      "epoch": 12,
+      "train_acc": 95.59,
+      "val_acc": 96.05,
+      "train_loss": 6.2889,
+      "val_loss": 1.1546
+    },
+    {
+      "epoch": 13,
+      "train_acc": 95.79,
+      "val_acc": 96.05,
+      "train_loss": 5.8707,
+      "val_loss": 1.1769
+    },
+    {
+      "epoch": 14,
+      "train_acc": 96.31,
+      "val_acc": 96.05,
+      "train_loss": 5.635,
+      "val_loss": 1.1668
+    }
+  ],
+  "best_val_acc": 96.04863221884499,
+  "classes": [
+    "dry",
+    "healthy",
+    "wet"
+  ]
+}

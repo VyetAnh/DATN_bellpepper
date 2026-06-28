@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Leaf']
+
+roboflow:
+  workspace: vits-workspace-flkv4
+  project: pepper__bell___healthy_valid-htyoc
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/vits-workspace-flkv4/pepper__bell___healthy_valid-htyoc/dataset/6

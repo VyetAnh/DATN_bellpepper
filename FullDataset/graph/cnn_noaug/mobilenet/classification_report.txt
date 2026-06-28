@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+         dry      0.936     0.964     0.950       197
+     healthy      0.979     0.959     0.969       339
+         wet      0.996     1.000     0.998       225
+
+    accuracy                          0.972       761
+   macro avg      0.970     0.974     0.972       761
+weighted avg      0.973     0.972     0.972       761

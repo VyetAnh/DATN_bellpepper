@@ -1,0 +1,129 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_acc": 71.32,
+      "val_acc": 80.03,
+      "train_loss": 78.9414,
+      "val_loss": 13.1086
+    },
+    {
+      "epoch": 2,
+      "train_acc": 78.94,
+      "val_acc": 82.79,
+      "train_loss": 58.4977,
+      "val_loss": 11.1843
+    },
+    {
+      "epoch": 3,
+      "train_acc": 81.28,
+      "val_acc": 86.07,
+      "train_loss": 52.6513,
+      "val_loss": 10.0193
+    },
+    {
+      "epoch": 4,
+      "train_acc": 82.71,
+      "val_acc": 84.76,
+      "train_loss": 49.2336,
+      "val_loss": 9.848
+    },
+    {
+      "epoch": 5,
+      "train_acc": 83.75,
+      "val_acc": 84.89,
+      "train_loss": 46.1335,
+      "val_loss": 9.668
+    },
+    {
+      "epoch": 6,
+      "train_acc": 83.16,
+      "val_acc": 87.25,
+      "train_loss": 46.9137,
+      "val_loss": 8.4285
+    },
+    {
+      "epoch": 7,
+      "train_acc": 84.73,
+      "val_acc": 88.17,
+      "train_loss": 44.6266,
+      "val_loss": 8.1939
+    },
+    {
+      "epoch": 8,
+      "train_acc": 83.5,
+      "val_acc": 86.73,
+      "train_loss": 44.7172,
+      "val_loss": 8.6803
+    },
+    {
+      "epoch": 9,
+      "train_acc": 84.9,
+      "val_acc": 87.52,
+      "train_loss": 43.1054,
+      "val_loss": 7.7626
+    },
+    {
+      "epoch": 10,
+      "train_acc": 85.61,
+      "val_acc": 87.12,
+      "train_loss": 40.6801,
+      "val_loss": 8.389
+    },
+    {
+      "epoch": 11,
+      "train_acc": 85.38,
+      "val_acc": 88.17,
+      "train_loss": 41.0905,
+      "val_loss": 7.5837
+    },
+    {
+      "epoch": 12,
+      "train_acc": 84.71,
+      "val_acc": 89.62,
+      "train_loss": 41.9684,
+      "val_loss": 7.0955
+    },
+    {
+      "epoch": 13,
+      "train_acc": 84.79,
+      "val_acc": 87.78,
+      "train_loss": 40.8532,
+      "val_loss": 7.6731
+    },
+    {
+      "epoch": 14,
+      "train_acc": 84.51,
+      "val_acc": 88.17,
+      "train_loss": 42.0559,
+      "val_loss": 7.3957
+    },
+    {
+      "epoch": 15,
+      "train_acc": 85.49,
+      "val_acc": 88.44,
+      "train_loss": 41.8542,
+      "val_loss": 7.4184
+    },
+    {
+      "epoch": 16,
+      "train_acc": 84.34,
+      "val_acc": 87.65,
+      "train_loss": 42.4545,
+      "val_loss": 7.5099
+    },
+    {
+      "epoch": 17,
+      "train_acc": 85.24,
+      "val_acc": 88.44,
+      "train_loss": 41.897,
+      "val_loss": 7.3209
+    }
+  ],
+  "best_val_acc": 89.61892247043363,
+  "classes": [
+    "dry",
+    "healthy",
+    "wet"
+  ]
+}
