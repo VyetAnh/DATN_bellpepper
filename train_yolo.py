@@ -40,9 +40,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# ==========================================================
 # CONFIG
-# ==========================================================
 
 DATA_YAML = "FullDataset/pepper_bell/data.yaml"
 
@@ -61,9 +59,7 @@ else:
     DEVICE = "cpu"
     print("\n⚠️  Đang dùng CPU\n")
 
-# ==========================================================
 # TRAIN
-# ==========================================================
 
 def train():
 
@@ -170,10 +166,7 @@ def train():
     else:
         logger.error("Không tìm thấy best.pt")
 
-
-# ==========================================================
 # VALIDATE
-# ==========================================================
 
 def validate():
     with open(
@@ -216,10 +209,7 @@ def validate():
     logger.info(f"mAP50-95  : {metrics.box.map:.3f}")
     logger.info("==================================")
 
-
-# ==========================================================
 # TEST 1 IMAGE
-# ==========================================================
 
 def test_single_image(image_path):
     logger.info(
@@ -264,9 +254,7 @@ def test_single_image(image_path):
         im = cv2.imread(img)
         im = cv2.resize(im, (256, 256))
         cv2.imwrite(img, im)
-# ==========================================================
 # MAIN
-# ==========================================================
 
 if __name__ == "__main__":
 
