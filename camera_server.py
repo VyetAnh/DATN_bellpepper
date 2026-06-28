@@ -1,12 +1,5 @@
 """
-camera_server.py — Nhận ảnh từ ESP32-CAM qua HTTP POST (ngrok tunnel).
-Chạy song song với main.py bằng thread riêng.
-
-ESP32-CAM + A7680C gửi ảnh lên:
-    POST https://xxxx.ngrok.io/upload
-    Body: multipart/form-data, field "image"
-
-Server lưu ảnh → gọi leaf_analyzer → cập nhật leaf_score toàn cục
+camera_server.py — Nhận ảnh từ ESP32-CAM 
 """
 
 import os
