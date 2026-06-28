@@ -56,9 +56,8 @@ def load_and_prepare_data() -> pd.DataFrame | None:
         return None
 
     df_raw = pd.read_csv(CSV_RAW, parse_dates=['timestamp'])
-    # =========================
+
     # TIME FEATURES
-    # =========================
     dt = pd.to_datetime(df_raw["timestamp"])
 
     # chỉ lấy thời gian trong ngày
@@ -180,10 +179,8 @@ def train_models(df: pd.DataFrame) -> dict:
     X_soil = df_soil[FEATURES_SOIL]
     y_soil = df_soil['soil_future']
 
-
-    # ==========================================================
     # RF SOIL
-    # ==========================================================
+
     X_soil_train, X_soil_test, y_soil_tr, y_soil_te = train_test_split(
         X_soil,
         y_soil,
@@ -196,9 +193,7 @@ def train_models(df: pd.DataFrame) -> dict:
         f"test={len(X_soil_test)}"
     )
 
-    # ==========================================================
     # RF VOLUME
-    # ==========================================================
 
     df_irr = df_volume[
         df_volume["pump_on"] == 1
@@ -236,10 +231,8 @@ def train_models(df: pd.DataFrame) -> dict:
         f"test={len(X_test)}"
     )
 
-
-    # ==========================
     # Ablation Feature Sets
-    # ==========================
+
 
     feature_sets = {
 
@@ -279,8 +272,6 @@ def train_models(df: pd.DataFrame) -> dict:
         random_state=42
     )
     
-
-
 
     # Model 1: RF Regressor (soil_future)
     logger.info("[1/4] Training RF Regressor — soil_future...")
@@ -510,9 +501,7 @@ def train_models(df: pd.DataFrame) -> dict:
             y_vol_te,
             yp_vol
         )
-        # ==========================
         # Feature Importance
-        # ==========================
 
         importance = pd.DataFrame({
 
@@ -549,9 +538,7 @@ def train_models(df: pd.DataFrame) -> dict:
         )
 
         plt.close()
-        # ==========================
         # Volume Actual vs Predicted
-        # ==========================
 
         plt.figure(figsize=(6,6))
 
