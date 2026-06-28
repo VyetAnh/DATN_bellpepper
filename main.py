@@ -1,11 +1,5 @@
 """
 main.py — Điểm khởi động chính.
-Luồng mỗi 5 phút:
-  1. Đọc cảm biến từ Firebase
-  2. Chạy AI → ra: volume_mL
-  3. In kết quả ra terminal
-  4. Ghi vào CSV (cảm biến + 3 cột kết quả)
-  5. Gửi 3 cột kết quả lên MQTT → ESP32 đọc điều khiển relay
 """
 
 import os
@@ -95,11 +89,7 @@ def job_collect_and_predict():
         from predictor import predict
         result = predict(sensor, reg_soil_model, reg_vol_model)
 
-
-    # ======================================================
     # Leaf Feedback
-    # ======================================================
-
     if result["pump_on"]:
 
         from leaf_analyzer import (
@@ -138,7 +128,6 @@ def job_collect_and_predict():
             f"🌿 Leaf Feedback: {adjust:+d}% | "
             f"{old_volume:.2f} -> {result['volume_mL']:.2f} mL"
         )
-
 
     # 3. In kết quả
     _print_result(sensor, result)
