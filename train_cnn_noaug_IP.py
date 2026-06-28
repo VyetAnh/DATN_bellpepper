@@ -91,11 +91,7 @@ LR             = 3e-4
 best_epochs_no_improve = 0
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# PHẦN 1: CHUẨN BỊ DATASET
-# ═══════════════════════════════════════════════════════════════════════════════
+# PHẦN 1: DATASET
 
 def create_dataset_structure():
     for split in ["train", "val", "test"]:
@@ -164,9 +160,8 @@ def auto_split(source_dir, val_ratio=0.15, test_ratio=0.15):
         if torch.cuda.is_available()
         else "CPU"
     )
-# ═══════════════════════════════════════════════════════════════════════════════
+
 # PHẦN 2: TRAIN CNN
-# ═══════════════════════════════════════════════════════════════════════════════
 def build_model(num_classes):
 
     if MODEL_NAME == "mobilenet":
@@ -461,11 +456,7 @@ def train():
     with open(f"{GRAPH_DIR}/train_history.json", "w") as f:
         json.dump({"history": history, "best_val_acc": best_val_acc,
                    "classes": CLASSES}, f, indent=2)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
 # PHẦN 3: VALIDATE & TEST
-# ═══════════════════════════════════════════════════════════════════════════════
 
 def validate():
     """Đánh giá chi tiết từng class trên tập val."""
@@ -755,11 +746,7 @@ def crop_only(image_path: str):
                 n += 1
 
     logger.info(f"✅ Crop xong: {n} lá → {out_dir}/")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
 # MAIN
-# ═══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
 
